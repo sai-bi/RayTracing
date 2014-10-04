@@ -9,12 +9,12 @@ public:
     double y_;
     double z_;
     
-    Vector3D(){ };
+    Vector3D(){ }
     Vector3D(double X, double Y, double Z){
     	x_ = X;
     	y_ = Y;    
     	z_ = Z;
-    };
+    }
     Vector3D(double X){
     	x_ = X;
     	y_ = X;
@@ -36,6 +36,27 @@ public:
     friend Vector3D operator* (const Vector3D& v, double a); // v' = v * a;
     friend Vector3D operator* (double a, const Vector3D& v); // v' = a * v;
     friend Vector3D operator/ (const Vector3D& v, double a); // v' = v / a;
+};
+
+class RGBColor : public Vector3D{
+public:
+	RGBColor() {}
+	RGBColor(double X, double Y, double Z) {
+		x_ = X;
+		y_ = Y;
+		z_ = Z;
+	}
+	RGBColor(double X){
+		x_ = X;
+		y_ = X;
+		z_ = X;
+	}
+	RGBColor(const Vector3D& v){
+		x_ = v.x_;
+		y_ = v.y_;
+		z_ = v.z_;
+	}
+	friend RGBColor NormalizeColor(const RGBColor& v);
 };
 
 // magnitude
@@ -86,7 +107,14 @@ inline Vector3D CrossProd(const Vector3D& v1, const Vector3D& v2){
 					v1.x_ * v2.y_ - v1.y_ * v2.x_);
 }
 
+inline RGBColor NormalizeColor(const RGBColor& v){
+	double max_v = v.x_ > v.y_ ? v.x_ : v.y_;
+    max_v = max_v > v.z_ ? max_v : v.z_;
+	if(abs(max_v) > 1e-10){
+		return v / max_v;
+	}
+	return v;
+}
 
 
- 
 #endif
