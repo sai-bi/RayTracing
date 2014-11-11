@@ -7,9 +7,9 @@ public:
 	bool Hit(const Ray& ray, double t_min, double t_max, double time, HitRecord& record) const;
 	bool ShadowHit(const Ray& ray, double t_min, double t_max, double time) const;
 
-	Vector3D p0;
-	Vector3D p1;
-	Vector3D p2;
-	RGB color;
+	Vector3D p0_;
+	Vector3D p1_;
+	Vector3D p2_;
+	RGB color_;
 };
 #endif

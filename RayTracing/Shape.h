@@ -7,9 +7,9 @@
 
 class HitRecord{
 public:
-	double t;
-	Vector3D normal;
-	RGB color;
+	double t_;
+	Vector3D normal_;
+	RGB color_;
 };
 
 class Shape{
