@@ -14,7 +14,7 @@ void SingleSampleRayTracer(){
     shapes.push_back(new Sphere(Vector3D(250,250,-1000), 150, RGB(0.2,0.2,0.8)));
     shapes.push_back(new Triangle(Vector3D(300.0, 600.0, -800),
                                   Vector3D(0.0, 100.0,-1000.0),
-                                  Vector3D(450.0, 20.0, -1000.0)
+                                  Vector3D(450.0, 20.0, -1000.0),
                                   RGB(0.8,0.2,0.2)));
 
     Mat_<Vec3b> image(500,500);
