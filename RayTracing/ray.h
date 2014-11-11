@@ -7,8 +7,8 @@
 class Ray{
 public:
     Ray(const Vector3D startpoint, const Vector3D direction){
-        this->location_ = startpoint;
-        this->direction_ = direction;
+        this->location_ = Vector3D(startpoint);
+        this->direction_ = Vector3D(direction);
         Precompute();
     }
 
