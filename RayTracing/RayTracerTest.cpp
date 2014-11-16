@@ -36,10 +36,10 @@ void SingleSampleRayTracer(){
                 }
             }
             if(is_a_hit){
-                image(i,j) = Vec3b(255 * record.color_);
+                image(j,i) = Vec3b(255 * record.color_);
             }
             else{
-                image(i,j) = Vec3b(255 * RGB(0.2,0.2,0.2));
+                image(j,i) = Vec3b(255 * RGB(0.2,0.2,0.2));
             }
         }
     }

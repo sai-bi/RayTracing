@@ -37,7 +37,7 @@ bool Triangle::Hit(const Ray& ray, double t_min, double t_max, double time, HitR
         return false;
     }
 
-    double t = -(f * akjb + e*jcal + d * blkc) / M;
+    double t = -1.0 * (f * akjb + e*jcal + d * blkc) / M;
     if(t >= t_min && t <= t_max){
         record.t_ = t;
         record.normal_ = (p1_ - p0_).cross(p2_ - p0_);
@@ -79,7 +79,7 @@ bool Triangle::ShadowHit(const Ray& ray, double t_min, double t_max, double time
         return false;
     }
 
-    double t = -(f * akjb + e*jcal + d * blkc) / M;
+    double t = -1.0 * (f * akjb + e*jcal + d * blkc) / M;
     if(t >= t_min && t <= t_max){
         return true;
     }

@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClInclude Include="common.h" />
     <ClInclude Include="RayTracerTest.h" />
+    <ClInclude Include="Sample.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="RGB.h" />
